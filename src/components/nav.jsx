@@ -137,35 +137,38 @@ export const Nav = () => {
               />
             </div>
             <div className="flex w-full flex-col items-center">
-              <label className="mb-1 block text-xs font-semibold text-gray-700">
-                Captcha
-              </label>
-              <div className="mb-2 flex items-center gap-3">
-                <span className="rounded bg-gray-100 px-4 py-2 font-mono text-lg tracking-widest select-none">
-                  aLucjm
-                </span>
-                <button
-                  type="button"
-                  className="focus:outline-none"
-                  tabIndex={-1}
-                  aria-label="Refresh Captcha"
-                >
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-6 w-6 text-green-500"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
+              <div className="flex">
+                <label className="mb-1 flex items-center justify-evenly text-xs font-semibold text-gray-700">
+                  Captcha
+                </label>
+                <div className="mb-2 flex items-center gap-3">
+                  <span className="rounded bg-gray-100 px-4 py-2 font-mono text-lg tracking-widest select-none">
+                    aLucjm
+                  </span>
+                  <button
+                    type="button"
+                    className="focus:outline-none"
+                    tabIndex={-1}
+                    aria-label="Refresh Captcha"
                   >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M4 4v5h.582M20 20v-5h-.581M5.5 19A7.963 7.963 0 014 12c0-4.418 3.582-8 8-8a7.963 7.963 0 017.5 7M19 5l-7 7-7-7"
-                    />
-                  </svg>
-                </button>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-6 w-6 text-green-500"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 4v5h.582M20 20v-5h-.581M5.5 19A7.963 7.963 0 014 12c0-4.418 3.582-8 8-8a7.963 7.963 0 017.5 7M19 5l-7 7-7-7"
+                      />
+                    </svg>
+                  </button>
+                </div>
               </div>
+
               <span className="mb-1 block text-center text-xs text-gray-500">
                 Type the captcha here
               </span>
