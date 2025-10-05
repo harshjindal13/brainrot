@@ -1,6 +1,22 @@
 import React from "react";
+import axios from "axios";
+import { BACKEND_URL } from "../config";
 
-export const Mobhero = ({ url, name, passno, fromDate, toDate, qrurl }) => {
+// Helper function to format the date string
+const formatDateToDDMMYYYY = (dateString) => {
+  if (!dateString) return ''; // Handle case where date is not available
+
+  const date = new Date(dateString);
+  
+  // Get day, month, and year
+  const day = String(date.getDate()).padStart(2, '0');
+  const month = String(date.getMonth() + 1).padStart(2, '0'); // Months are 0-indexed, so we add 1
+  const year = date.getFullYear();
+
+  return `${day}/${month}/${year}`;
+};
+
+export const Mobhero = ({ url, name, passNumber, fromDate, toDate, qrurl }) => {
   return (
     <div className="bg-[#e0f5f7] py-2">
       <div className="m-4 mt-3 mb-14 bg-[url(../../assets/dtc-watermark.jpg)] shadow-sm">
@@ -14,6 +30,7 @@ export const Mobhero = ({ url, name, passno, fromDate, toDate, qrurl }) => {
         />
 
         <h2 className="text-center text-2xl font-bold text-neutral-700">
+          
           {name}
         </h2>
         <p className="py-4 text-center text-2xl font-bold tracking-tighter text-neutral-700">
@@ -27,11 +44,11 @@ export const Mobhero = ({ url, name, passno, fromDate, toDate, qrurl }) => {
           className="mx-auto animate-pulse pb-2 text-center text-2xl font-bold text-[#2f8a12]"
           style={{ animationDuration: "1750ms" }}
         >
-          {passno}
+          {passNumber}
         </p>
 
         <p className="px-3 pb-1.5 text-center text-xl font-bold tracking-wide text-red-500">
-          Valid from {fromDate} to {toDate}
+          Valid from {formatDateToDDMMYYYY(fromDate)} to {formatDateToDDMMYYYY(toDate)}
         </p>
 
         <div className="mb-4 flex justify-between border-t-2 border-neutral-200 px-2 pb-2">

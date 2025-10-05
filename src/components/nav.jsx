@@ -1,4 +1,45 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import { BACKEND_URL } from "../config";
+
+const links = [
+  {
+    href: "#",
+    title: "HOME"
+  },
+  {
+    href: `${BACKEND_URL}/dtc/new`,
+    title: "APPLY FOR BUS PASS"
+  },
+  {
+    href: "#",
+    title: "FAQs"
+  },
+  {
+    href: "#",
+    title: "LOGIN"
+  },
+  {
+    href: "#",
+    title: "PRICE CALCULATOR"
+  },
+  {
+    href: "#",
+    title: "RE-GENERATEe-PASS"
+  },
+  {
+    href: "#",
+    title: "APPLICATION STATUS"
+  },
+  {
+    href: "#",
+    title: "DOWNLOAD"
+  },
+  {
+    href: "#",
+    title: "CONTACT US"
+  }
+]
 
 export const Nav = () => {
   return (
@@ -33,7 +74,21 @@ export const Nav = () => {
           */}
           <div className="sticky top-0 z-50 w-full bg-[#07234b]">
             <nav>
-              <ul className="text-2px flex flex-row items-center justify-evenly gap-4 py-1 font-semibold">
+
+              <div className="flex items-center justify-between px-10 py-1 font-mono text-[#43b914]  gap-14 tracking-tight">
+                {links.map((link, index) => (
+                  <Link 
+                    href = {link.href} 
+                    key={index}
+                    className="hover:text-pink-400"
+                  >
+                    {link.title}
+                  </Link>
+                ))}
+              </div>
+
+
+              {/* <ul className="text-2px flex flex-row items-center justify-evenly gap-4 py-1 font-semibold">
                 <li>
                   <a
                     href="#"
@@ -43,7 +98,7 @@ export const Nav = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="px-2 text-green-400 hover:underline">
+                  <a href="http://localhost:8080/dtc/new" className="px-2 text-green-400 hover:underline">
                     APPLY FOR BUS PASS
                   </a>
                 </li>
@@ -63,7 +118,7 @@ export const Nav = () => {
                   {/* <ul className="absolute left-0 mt-1 hidden group-hover:block bg-[#07234b] text-white rounded shadow-lg">
                   <li><a href="#" className="block px-4 py-2 hover:bg-[#01a2a6]">User Login</a></li>
                   <li><a href="#" className="block px-4 py-2 hover:bg-[#01a2a6]">Admin Login</a></li>
-                </ul> */}
+                </ul> }
                 </li>
                 <li>
                   <a href="#" className="px-2 text-green-400 hover:underline">
@@ -71,7 +126,7 @@ export const Nav = () => {
                   </a>
                 </li>
                 <li>
-                  <a href="#" className="px-2 text-green-400 hover:underline">
+                  <a href="http://localhost:8080/dtc/show" className="px-2 text-green-400 hover:underline">
                     RE-GENERATE E-PASS
                   </a>
                 </li>
@@ -90,7 +145,7 @@ export const Nav = () => {
                     CONTACT US
                   </a>
                 </li>
-              </ul>
+              </ul> */}
             </nav>
           </div>
         </div>
