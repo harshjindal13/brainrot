@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams } from 'react-router-dom';
-import { Footer } from "../components/footer";
 import { Mobhero } from "../components/mobhero";
 import { MobNav } from "../components/mobNav";
 import { BACKEND_URL } from '../config';
@@ -34,8 +33,8 @@ export function Dashboard() {
             passNumber: "7502092530442",
             fromDate: "19/09/2025",
             toDate: "18/10/2025",
-            photo: "/../../assets/user-photo.jpg",
-            qrCode: "../../assets/qr-code.png"
+            photo: "../assets/user-photo.jpg",
+            qrCode: "../assets/qr-code.png"
           });
           }
         }
@@ -48,8 +47,8 @@ export function Dashboard() {
           passNumber: "7502092530442",
           fromDate: "19/09/2025",
           toDate: "18/10/2025",
-          photo: "/../../assets/user-photo.jpg",
-          qrCode: "../../assets/qr-code.png"
+          photo: "../assets/user-photo.jpg",
+          qrCode: "../assets/qr-code.png"
         });
       } finally {
         setLoading(false);
@@ -61,42 +60,37 @@ export function Dashboard() {
 
   if (loading) {
     return (
-      <>
+      <div className="dashboard-page">
         <MobNav />
         <div className="flex justify-center items-center h-64">
           <div className="text-xl font-semibold text-[#01a2a6]">Loading pass data...</div>
         </div>
-        <Footer />
-      </>
+      </div>
     );
   }
 
   if (error) {
     return (
-      <>
+      <div className="dashboard-page">
         <MobNav />
         <div className="flex justify-center items-center h-64">
           <div className="text-xl font-semibold text-red-500">{error}</div>
         </div>
-        <Footer />
-      </>
+      </div>
     );
   }
 
   return (
-    <>
+    <div className="dashboard-page">
       <MobNav />
-
       <Mobhero
-        url={passData?.photo || "/../../assets/user-photo.jpg"}
+        url={passData?.photo || "/assets/user-photo.jpg"}
         name={passData?.name || "ANKIT SHARMA"}
         passNumber={passData?.passNumber || "7502092530442"}
         fromDate={passData?.fromDate || "19/09/2025"}
         toDate={passData?.toDate || "18/10/2025"}
-        qrurl={passData?.qrCode || "../../assets/qr-code.png"}
+        qrurl={passData?.qrCode || "/assets/qr-code.png"}
       />
-
-      <Footer />
-    </>
+    </div>
   )
 }
