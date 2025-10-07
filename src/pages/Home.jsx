@@ -1,11 +1,11 @@
-import { Footer } from "../components/footer";
-import { Nav } from "../components/nav";
-
 export function Home() {
   return (
-    <>
-      <Nav />
-      <Footer/>
-    </>
+    <div className="home-page w-full">
+      <img 
+        src="/assets/homepage.jpg" 
+        alt="Delhi Pass Homepage" 
+        className="w-full h-auto" 
+      />
+    </div>
   )
 }

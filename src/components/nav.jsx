@@ -41,7 +41,7 @@ const links = [
   }
 ]
 
-export const Nav = () => {
+export const Nav1 = () => {
   return (
     <>
       <div className="flex justify-between bg-[#01a2a6] p-3 text-white">
@@ -58,8 +58,8 @@ export const Nav = () => {
 
       <div className="h-8px flex flex-col items-center justify-center bg-[#07234b] pt-5">
         <img
-          src="../../assets/dtc-logo.png"
-          alt=""
+          src="/assets/dtc-logo.png"
+          alt="DTC Logo"
           height={126.99}
           width={126.99}
         />

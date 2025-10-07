@@ -16,10 +16,10 @@ const formatDateToDDMMYYYY = (dateString) => {
   return `${day}/${month}/${year}`;
 };
 
-export const Mobhero = ({ url, name, passNumber, fromDate, toDate, qrurl }) => {
+const Mobhero = ({ url, name, passNumber, fromDate, toDate, qrurl }) => {
   return (
     <div className="bg-[#e0f5f7] py-2">
-      <div className="m-4 mt-3 mb-14 bg-[url(../../assets/dtc-watermark.jpg)] shadow-sm">
+        <div className="m-4 mt-3 mb-14 bg-[url(/assets/dtc-watermark.jpg)] shadow-sm">
         <h1 className="border-b-2 border-neutral-200 py-3 text-center text-2xl font-bold text-[#01a2a6] underline underline-offset-2">
           DTC And Cluster Bus Pass
         </h1>
@@ -52,7 +52,7 @@ export const Mobhero = ({ url, name, passNumber, fromDate, toDate, qrurl }) => {
         </p>
 
         <div className="mb-4 flex justify-between border-t-2 border-neutral-200 px-2 pb-2">
-          <img src="../../assets/signature.png" className="h-20 w-20" />
+          <img src="/assets/signature.png" className="h-20 w-20" />
           <div className="h-20 self-center border-l-2 border-neutral-200"></div>
 
           <img src={qrurl} alt="" className="mt-2 mr-8 h-18 w-18" />
@@ -61,3 +61,6 @@ export const Mobhero = ({ url, name, passNumber, fromDate, toDate, qrurl }) => {
     </div>
   );
 };
+
+export { Mobhero };
+export default Mobhero;
